@@ -1,0 +1,626 @@
+        -:    0:Source:feedback_control.c
+        -:    0:Graph:feedback_control.gcno
+        -:    0:Data:feedback_control.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2: * Academic License - for use in teaching, academic research, and meeting
+        -:    3: * course requirements at degree granting institutions only.  Not for
+        -:    4: * government, commercial, or other organizational use.
+        -:    5: *
+        -:    6: * File: feedback_control.c
+        -:    7: *
+        -:    8: * Code generated for Simulink model 'feedback_control'.
+        -:    9: *
+        -:   10: * Model version                  : 1.107
+        -:   11: * Simulink Coder version         : 9.4 (R2020b) 29-Jul-2020
+        -:   12: * C/C++ source code generated on : Fri Jun 18 10:43:25 2021
+        -:   13: *
+        -:   14: * Target selection: ert.tlc
+        -:   15: * Embedded hardware selection: ARM Compatible->ARM Cortex-M
+        -:   16: * Code generation objectives: Unspecified
+        -:   17: * Validation result: Not run
+        -:   18: */
+        -:   19:
+        -:   20:#include "feedback_control.h"
+        -:   21:
+        -:   22:/* Named constants for Chart: '<Root>/Chart' */
+        -:   23:#define feedback_IN_DISCONNECTED_SENSOR ((uint8_T)3U)
+        -:   24:#define feedback_con_IN_NO_ACTIVE_CHILD ((uint8_T)0U)
+        -:   25:#define feedback_con_IN_TRIG_SIGNAL_OFF ((uint8_T)1U)
+        -:   26:#define feedback_cont_IN_BLINK_OUTRANGE ((uint8_T)2U)
+        -:   27:#define feedback_cont_IN_TRIG_SIGNAL_ON ((uint8_T)2U)
+        -:   28:#define feedback_contr_IN_BLINK_INRANGE ((uint8_T)1U)
+        -:   29:#define feedback_control_IN_ECHO_DOWN  ((uint8_T)1U)
+        -:   30:#define feedback_control_IN_ECHO_UP    ((uint8_T)2U)
+        -:   31:#define feedback_control_IN_LED_OFF    ((uint8_T)1U)
+        -:   32:#define feedback_control_IN_LED_ON     ((uint8_T)2U)
+        -:   33:
+        -:   34:extern real_T rt_roundd(real_T u);
+        -:   35:
+        -:   36:/* Forward declaration for local functions */
+        -:   37:static void feedback_co_exit_atomic_ECHO_UP(uint16_T *feedback_control_Y_Level,
+        -:   38:  D_Work_feedback_control *feedback_control_DWork);
+        -:   39:
+        -:   40:/*===========*
+        -:   41: * Constants *
+        -:   42: *===========*/
+        -:   43:#define RT_PI                          3.14159265358979323846
+        -:   44:#define RT_PIF                         3.1415927F
+        -:   45:#define RT_LN_10                       2.30258509299404568402
+        -:   46:#define RT_LN_10F                      2.3025851F
+        -:   47:#define RT_LOG10E                      0.43429448190325182765
+        -:   48:#define RT_LOG10EF                     0.43429449F
+        -:   49:#define RT_E                           2.7182818284590452354
+        -:   50:#define RT_EF                          2.7182817F
+        -:   51:
+        -:   52:/*
+        -:   53: * UNUSED_PARAMETER(x)
+        -:   54: *   Used to specify that a function parameter (argument) is required but not
+        -:   55: *   accessed by the function body.
+        -:   56: */
+        -:   57:#ifndef UNUSED_PARAMETER
+        -:   58:#if defined(__LCC__)
+        -:   59:#define UNUSED_PARAMETER(x)                                      /* do nothing */
+        -:   60:#else
+        -:   61:
+        -:   62:/*
+        -:   63: * This is the semi-ANSI standard way of indicating that an
+        -:   64: * unused function parameter is required.
+        -:   65: */
+        -:   66:#define UNUSED_PARAMETER(x)            (void) (x)
+        -:   67:#endif
+        -:   68:#endif
+        -:   69:
+function _Z9rt_rounddd called 33 returned 100% blocks executed 60%
+       33:   70:real_T rt_roundd(real_T u)
+        -:   71:{
+        -:   72:  real_T y;
+       33:   73:  if (fabs(u) < 4.503599627370496E+15) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+       33:   74:    if (u >= 0.5) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+       33:   75:      y = floor(u + 0.5);
+    #####:   76:    } else if (u > -0.5) {
+branch  0 never executed
+branch  1 never executed
+    #####:   77:      y = 0.0;
+        -:   78:    } else {
+    #####:   79:      y = ceil(u - 0.5);
+        -:   80:    }
+        -:   81:  } else {
+    #####:   82:    y = u;
+        -:   83:  }
+        -:   84:
+       33:   85:  return y;
+        -:   86:}
+        -:   87:
+        -:   88:/* Function for Chart: '<Root>/Chart' */
+function _ZL31feedback_co_exit_atomic_ECHO_UPPtP23D_Work_feedback_control called 33 returned 100% blocks executed 75%
+       33:   89:static void feedback_co_exit_atomic_ECHO_UP(uint16_T *feedback_control_Y_Level,
+        -:   90:  D_Work_feedback_control *feedback_control_DWork)
+        -:   91:{
+        -:   92:  real_T tmp_0;
+        -:   93:  int32_T tmp;
+        -:   94:
+        -:   95:  /* Exit 'ECHO_UP': '<S1>:49' */
+       66:   96:  feedback_control_DWork->measures[feedback_control_DWork->index - 1] =
+       66:   97:    feedback_control_DWork->echo_pulse_duration_us / 58.0;
+       99:   98:  tmp_0 = rt_roundd((((feedback_control_DWork->measures[0] +
+call    0 returned 100%
+       66:   99:                       feedback_control_DWork->measures[1]) +
+       66:  100:                      feedback_control_DWork->measures[2]) +
+       33:  101:                     feedback_control_DWork->measures[3]) / 4.0);
+       33:  102:  if (tmp_0 < 65536.0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+       33:  103:    if (tmp_0 >= 0.0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  104:      /* Outport: '<Root>/Level' */
+       33:  105:      *feedback_control_Y_Level = (uint16_T)tmp_0;
+        -:  106:    } else {
+        -:  107:      /* Outport: '<Root>/Level' */
+    #####:  108:      *feedback_control_Y_Level = 0U;
+        -:  109:    }
+        -:  110:  } else {
+        -:  111:    /* Outport: '<Root>/Level' */
+    #####:  112:    *feedback_control_Y_Level = MAX_uint16_T;
+        -:  113:  }
+        -:  114:
+       33:  115:  tmp = (int32_T)(feedback_control_DWork->index + 1U);
+       33:  116:  if ((feedback_control_DWork->index + 1U) > 255U) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  117:    tmp = 255;
+        -:  118:  }
+        -:  119:
+       33:  120:  feedback_control_DWork->index = (uint8_T)tmp;
+       33:  121:  if (feedback_control_DWork->index > 4) {
+branch  0 taken 24% (fallthrough)
+branch  1 taken 76%
+        8:  122:    feedback_control_DWork->index = 1U;
+        -:  123:  }
+       33:  124:}
+        -:  125:
+        -:  126:/* Model step function */
+function _Z21feedback_control_stepP24tag_RTM_feedback_controlhPhPtS1_ called 480001 returned 100% blocks executed 100%
+   480001:  127:void feedback_control_step(RT_MODEL_feedback_control *const feedback_control_M,
+        -:  128:  boolean_T feedback_control_U_echo_signal, boolean_T
+        -:  129:  *feedback_control_Y_trig_signal, uint16_T *feedback_control_Y_Level, boolean_T
+        -:  130:  *feedback_control_Y_Led)
+        -:  131:{
+   480001:  132:  D_Work_feedback_control *feedback_control_DWork = feedback_control_M->dwork;
+        -:  133:
+        -:  134:  /* Chart: '<Root>/Chart' incorporates:
+        -:  135:   *  Inport: '<Root>/echo_signal'
+        -:  136:   *  Outport: '<Root>/Level'
+        -:  137:   */
+   480001:  138:  if (feedback_control_DWork->temporalCounter_i1 < MAX_uint32_T) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+   480001:  139:    feedback_control_DWork->temporalCounter_i1++;
+        -:  140:  }
+        -:  141:
+   480001:  142:  if (feedback_control_DWork->temporalCounter_i2 < 8191U) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+   480001:  143:    feedback_control_DWork->temporalCounter_i2++;
+        -:  144:  }
+        -:  145:
+   480001:  146:  if (feedback_control_DWork->temporalCounter_i3 < MAX_uint32_T) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+   480001:  147:    feedback_control_DWork->temporalCounter_i3++;
+        -:  148:  }
+        -:  149:
+        -:  150:  /* Gateway: Chart */
+        -:  151:  /* During: Chart */
+   480001:  152:  if (feedback_control_DWork->is_active_c3_feedback_control == 0U) {
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  153:    /* Entry: Chart */
+        1:  154:    feedback_control_DWork->is_active_c3_feedback_control = 1U;
+        -:  155:
+        -:  156:    /* Entry Internal: Chart */
+        -:  157:    /* Entry 'PROCESSING_LOGIC': '<S1>:6' */
+        -:  158:    /* Entry Internal 'PROCESSING_LOGIC': '<S1>:6' */
+        -:  159:    /* Transition: '<S1>:177' */
+        1:  160:    feedback_control_DWork->is_PROCESSING_LOGIC =
+        -:  161:      feedback_cont_IN_TRIG_SIGNAL_ON;
+        1:  162:    feedback_control_DWork->temporalCounter_i1 = 0U;
+        -:  163:
+        -:  164:    /* Outport: '<Root>/trig_signal' */
+        -:  165:    /* Entry 'TRIG_SIGNAL_ON': '<S1>:77' */
+        1:  166:    *feedback_control_Y_trig_signal = true;
+        -:  167:
+        -:  168:    /* Entry Internal 'MONITORING_LOGIC': '<S1>:60' */
+        -:  169:    /* Transition: '<S1>:178' */
+        1:  170:    feedback_control_DWork->is_MONITORING_LOGIC =
+        -:  171:      feedback_IN_DISCONNECTED_SENSOR;
+        -:  172:
+        -:  173:    /* Entry 'DISCONNECTED_SENSOR': '<S1>:104' */
+        -:  174:    /* Entry Internal 'DISCONNECTED_SENSOR': '<S1>:104' */
+        -:  175:    /* Transition: '<S1>:167' */
+        1:  176:    feedback_control_DWork->is_DISCONNECTED_SENSOR = feedback_control_IN_LED_ON;
+        1:  177:    feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  178:
+        -:  179:    /* Outport: '<Root>/Led' */
+        -:  180:    /* Entry 'LED_ON': '<S1>:144' */
+        1:  181:    *feedback_control_Y_Led = true;
+        -:  182:  } else {
+        -:  183:    /* During 'PROCESSING_LOGIC': '<S1>:6' */
+   480000:  184:    if (feedback_control_DWork->is_PROCESSING_LOGIC ==
+branch  0 taken 99% (fallthrough)
+branch  1 taken 1%
+        -:  185:        feedback_con_IN_TRIG_SIGNAL_OFF) {
+        -:  186:      /* Outport: '<Root>/trig_signal' */
+   479840:  187:      *feedback_control_Y_trig_signal = false;
+        -:  188:
+        -:  189:      /* During 'TRIG_SIGNAL_OFF': '<S1>:79' */
+   479840:  190:      if (feedback_control_DWork->temporalCounter_i2 >= 6000U) {
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  191:        /* Transition: '<S1>:84' */
+        -:  192:        /* Exit Internal 'TRIG_SIGNAL_OFF': '<S1>:79' */
+       79:  193:        if (feedback_control_DWork->is_TRIG_SIGNAL_OFF ==
+branch  0 taken 3% (fallthrough)
+branch  1 taken 97%
+        -:  194:            feedback_control_IN_ECHO_UP) {
+        2:  195:          feedback_co_exit_atomic_ECHO_UP(feedback_control_Y_Level,
+call    0 returned 100%
+        -:  196:            feedback_control_DWork);
+        2:  197:          feedback_control_DWork->is_TRIG_SIGNAL_OFF =
+        -:  198:            feedback_con_IN_NO_ACTIVE_CHILD;
+        -:  199:        } else {
+       77:  200:          feedback_control_DWork->is_TRIG_SIGNAL_OFF =
+        -:  201:            feedback_con_IN_NO_ACTIVE_CHILD;
+        -:  202:        }
+        -:  203:
+        -:  204:        /* Exit 'TRIG_SIGNAL_OFF': '<S1>:79' */
+       79:  205:        if (!feedback_control_DWork->echo_up_check) {
+branch  0 taken 61% (fallthrough)
+branch  1 taken 39%
+        -:  206:          /* Outport: '<Root>/Level' */
+       48:  207:          *feedback_control_Y_Level = 0U;
+        -:  208:        }
+        -:  209:
+       79:  210:        feedback_control_DWork->is_PROCESSING_LOGIC =
+        -:  211:          feedback_cont_IN_TRIG_SIGNAL_ON;
+       79:  212:        feedback_control_DWork->temporalCounter_i1 = 0U;
+        -:  213:
+        -:  214:        /* Outport: '<Root>/trig_signal' */
+        -:  215:        /* Entry 'TRIG_SIGNAL_ON': '<S1>:77' */
+       79:  216:        *feedback_control_Y_trig_signal = true;
+   479761:  217:      } else if (feedback_control_DWork->is_TRIG_SIGNAL_OFF ==
+branch  0 taken 98% (fallthrough)
+branch  1 taken 2%
+        -:  218:                 feedback_control_IN_ECHO_DOWN) {
+        -:  219:        /* During 'ECHO_DOWN': '<S1>:53' */
+   470059:  220:        if (feedback_control_U_echo_signal) {
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  221:          /* Transition: '<S1>:59' */
+       33:  222:          feedback_control_DWork->echo_up_check = true;
+       33:  223:          feedback_control_DWork->is_TRIG_SIGNAL_OFF =
+        -:  224:            feedback_control_IN_ECHO_UP;
+       33:  225:          feedback_control_DWork->temporalCounter_i1 = 0U;
+        -:  226:
+        -:  227:          /* Entry 'ECHO_UP': '<S1>:49' */
+       66:  228:          feedback_control_DWork->echo_pulse_duration_us = ((real_T)
+       66:  229:            feedback_control_DWork->temporalCounter_i1) * 10.0;
+        -:  230:        }
+        -:  231:      } else {
+        -:  232:        /* During 'ECHO_UP': '<S1>:49' */
+     9702:  233:        if (!feedback_control_U_echo_signal) {
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  234:          /* Transition: '<S1>:54' */
+       31:  235:          feedback_co_exit_atomic_ECHO_UP(feedback_control_Y_Level,
+call    0 returned 100%
+        -:  236:            feedback_control_DWork);
+       31:  237:          feedback_control_DWork->is_TRIG_SIGNAL_OFF =
+        -:  238:            feedback_control_IN_ECHO_DOWN;
+        -:  239:        } else {
+    19342:  240:          feedback_control_DWork->echo_pulse_duration_us = ((real_T)
+    19342:  241:            feedback_control_DWork->temporalCounter_i1) * 10.0;
+        -:  242:        }
+        -:  243:      }
+        -:  244:    } else {
+        -:  245:      /* Outport: '<Root>/trig_signal' */
+      160:  246:      *feedback_control_Y_trig_signal = true;
+        -:  247:
+        -:  248:      /* During 'TRIG_SIGNAL_ON': '<S1>:77' */
+      160:  249:      if (feedback_control_DWork->temporalCounter_i1 >= 2U) {
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+        -:  250:        /* Transition: '<S1>:83' */
+       80:  251:        feedback_control_DWork->is_PROCESSING_LOGIC =
+        -:  252:          feedback_con_IN_TRIG_SIGNAL_OFF;
+       80:  253:        feedback_control_DWork->temporalCounter_i2 = 0U;
+        -:  254:
+        -:  255:        /* Outport: '<Root>/trig_signal' */
+        -:  256:        /* Entry 'TRIG_SIGNAL_OFF': '<S1>:79' */
+       80:  257:        *feedback_control_Y_trig_signal = false;
+       80:  258:        feedback_control_DWork->echo_up_check = false;
+        -:  259:
+        -:  260:        /* Entry Internal 'TRIG_SIGNAL_OFF': '<S1>:79' */
+        -:  261:        /* Transition: '<S1>:126' */
+       80:  262:        feedback_control_DWork->is_TRIG_SIGNAL_OFF =
+        -:  263:          feedback_control_IN_ECHO_DOWN;
+        -:  264:      }
+        -:  265:    }
+        -:  266:
+        -:  267:    /* During 'MONITORING_LOGIC': '<S1>:60' */
+   480000:  268:    switch (feedback_control_DWork->is_MONITORING_LOGIC) {
+branch  0 taken 15%
+branch  1 taken 24%
+branch  2 taken 60%
+    74387:  269:     case feedback_contr_IN_BLINK_INRANGE:
+        -:  270:      /* During 'BLINK_INRANGE': '<S1>:62' */
+    74387:  271:      if (((*feedback_control_Y_Level) < 10) || ((*feedback_control_Y_Level) >
+branch  0 taken 99% (fallthrough)
+branch  1 taken 1%
+branch  2 taken 1% (fallthrough)
+branch  3 taken 99%
+        -:  272:           100)) {
+        -:  273:        /* Transition: '<S1>:107' */
+        -:  274:        /* Exit Internal 'BLINK_INRANGE': '<S1>:62' */
+        3:  275:        feedback_control_DWork->is_BLINK_INRANGE =
+        -:  276:          feedback_con_IN_NO_ACTIVE_CHILD;
+        3:  277:        feedback_control_DWork->is_MONITORING_LOGIC =
+        -:  278:          feedback_cont_IN_BLINK_OUTRANGE;
+        -:  279:
+        -:  280:        /* Entry 'BLINK_OUTRANGE': '<S1>:103' */
+        -:  281:        /* Entry Internal 'BLINK_OUTRANGE': '<S1>:103' */
+        -:  282:        /* Transition: '<S1>:166' */
+        3:  283:        feedback_control_DWork->is_BLINK_OUTRANGE = feedback_control_IN_LED_ON;
+        3:  284:        feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  285:
+        -:  286:        /* Outport: '<Root>/Led' */
+        -:  287:        /* Entry 'LED_ON': '<S1>:115' */
+        3:  288:        *feedback_control_Y_Led = true;
+    74384:  289:      } else if (feedback_control_DWork->is_BLINK_INRANGE ==
+branch  0 taken 46% (fallthrough)
+branch  1 taken 54%
+        -:  290:                 feedback_control_IN_LED_OFF) {
+        -:  291:        /* Outport: '<Root>/Led' */
+    33885:  292:        *feedback_control_Y_Led = false;
+        -:  293:
+        -:  294:        /* During 'LED_OFF': '<S1>:110' */
+    67770:  295:        if (feedback_control_DWork->temporalCounter_i3 >= ((uint32_T)ceil(((0.1F
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+    33885:  296:                - ((((real32_T)(*feedback_control_Y_Level)) * 0.1F) / 100.0F)) /
+        -:  297:               1.0E-5) - 1.0000000000000002E-13))) {
+        -:  298:          /* Transition: '<S1>:113' */
+        6:  299:          feedback_control_DWork->is_BLINK_INRANGE = feedback_control_IN_LED_ON;
+        6:  300:          feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  301:
+        -:  302:          /* Outport: '<Root>/Led' */
+        -:  303:          /* Entry 'LED_ON': '<S1>:108' */
+        6:  304:          *feedback_control_Y_Led = true;
+        -:  305:        }
+        -:  306:      } else {
+        -:  307:        /* Outport: '<Root>/Led' */
+    40499:  308:        *feedback_control_Y_Led = true;
+        -:  309:
+        -:  310:        /* During 'LED_ON': '<S1>:108' */
+    80998:  311:        if (feedback_control_DWork->temporalCounter_i3 >= ((uint32_T)ceil
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+    40499:  312:             ((((((real32_T)(*feedback_control_Y_Level)) * 0.1F) / 100.0F) /
+        -:  313:               1.0E-5) - 1.0000000000000002E-13))) {
+        -:  314:          /* Transition: '<S1>:111' */
+        7:  315:          feedback_control_DWork->is_BLINK_INRANGE = feedback_control_IN_LED_OFF;
+        7:  316:          feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  317:
+        -:  318:          /* Outport: '<Root>/Led' */
+        -:  319:          /* Entry 'LED_OFF': '<S1>:110' */
+        7:  320:          *feedback_control_Y_Led = false;
+        -:  321:        }
+        -:  322:      }
+    74387:  323:      break;
+        -:  324:
+   117186:  325:     case feedback_cont_IN_BLINK_OUTRANGE:
+        -:  326:      /* During 'BLINK_OUTRANGE': '<S1>:103' */
+   117186:  327:      if (((*feedback_control_Y_Level) >= 10) && ((*feedback_control_Y_Level) <=
+branch  0 taken 40% (fallthrough)
+branch  1 taken 60%
+branch  2 taken 1% (fallthrough)
+branch  3 taken 99%
+        -:  328:           100)) {
+        -:  329:        /* Transition: '<S1>:106' */
+        -:  330:        /* Exit Internal 'BLINK_OUTRANGE': '<S1>:103' */
+        2:  331:        feedback_control_DWork->is_BLINK_OUTRANGE =
+        -:  332:          feedback_con_IN_NO_ACTIVE_CHILD;
+        2:  333:        feedback_control_DWork->is_MONITORING_LOGIC =
+        -:  334:          feedback_contr_IN_BLINK_INRANGE;
+        -:  335:
+        -:  336:        /* Entry 'BLINK_INRANGE': '<S1>:62' */
+        -:  337:        /* Entry Internal 'BLINK_INRANGE': '<S1>:62' */
+        -:  338:        /* Transition: '<S1>:125' */
+        2:  339:        feedback_control_DWork->is_BLINK_INRANGE = feedback_control_IN_LED_ON;
+        2:  340:        feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  341:
+        -:  342:        /* Outport: '<Root>/Led' */
+        -:  343:        /* Entry 'LED_ON': '<S1>:108' */
+        2:  344:        *feedback_control_Y_Led = true;
+   117184:  345:      } else if ((*feedback_control_Y_Level) == 0) {
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  346:        /* Transition: '<S1>:137' */
+        -:  347:        /* Transition: '<S1>:138' */
+        -:  348:        /* Exit Internal 'BLINK_OUTRANGE': '<S1>:103' */
+        2:  349:        feedback_control_DWork->is_BLINK_OUTRANGE =
+        -:  350:          feedback_con_IN_NO_ACTIVE_CHILD;
+        2:  351:        feedback_control_DWork->is_MONITORING_LOGIC =
+        -:  352:          feedback_IN_DISCONNECTED_SENSOR;
+        -:  353:
+        -:  354:        /* Entry 'DISCONNECTED_SENSOR': '<S1>:104' */
+        -:  355:        /* Entry Internal 'DISCONNECTED_SENSOR': '<S1>:104' */
+        -:  356:        /* Transition: '<S1>:167' */
+        2:  357:        feedback_control_DWork->is_DISCONNECTED_SENSOR =
+        -:  358:          feedback_control_IN_LED_ON;
+        2:  359:        feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  360:
+        -:  361:        /* Outport: '<Root>/Led' */
+        -:  362:        /* Entry 'LED_ON': '<S1>:144' */
+        2:  363:        *feedback_control_Y_Led = true;
+   117182:  364:      } else if (feedback_control_DWork->is_BLINK_OUTRANGE ==
+branch  0 taken 23% (fallthrough)
+branch  1 taken 77%
+        -:  365:                 feedback_control_IN_LED_OFF) {
+        -:  366:        /* Outport: '<Root>/Led' */
+    27152:  367:        *feedback_control_Y_Led = false;
+        -:  368:
+        -:  369:        /* During 'LED_OFF': '<S1>:117' */
+    27152:  370:        if (feedback_control_DWork->temporalCounter_i3 >= 25000U) {
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  371:          /* Transition: '<S1>:123' */
+        1:  372:          feedback_control_DWork->is_BLINK_OUTRANGE = feedback_control_IN_LED_ON;
+        1:  373:          feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  374:
+        -:  375:          /* Outport: '<Root>/Led' */
+        -:  376:          /* Entry 'LED_ON': '<S1>:115' */
+        1:  377:          *feedback_control_Y_Led = true;
+        -:  378:        }
+        -:  379:      } else {
+        -:  380:        /* Outport: '<Root>/Led' */
+    90030:  381:        *feedback_control_Y_Led = true;
+        -:  382:
+        -:  383:        /* During 'LED_ON': '<S1>:115' */
+    90030:  384:        if (feedback_control_DWork->temporalCounter_i3 >= 25000U) {
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  385:          /* Transition: '<S1>:122' */
+        2:  386:          feedback_control_DWork->is_BLINK_OUTRANGE =
+        -:  387:            feedback_control_IN_LED_OFF;
+        2:  388:          feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  389:
+        -:  390:          /* Outport: '<Root>/Led' */
+        -:  391:          /* Entry 'LED_OFF': '<S1>:117' */
+        2:  392:          *feedback_control_Y_Led = false;
+        -:  393:        }
+        -:  394:      }
+   117186:  395:      break;
+        -:  396:
+   288427:  397:     default:
+        -:  398:      /* During 'DISCONNECTED_SENSOR': '<S1>:104' */
+   288427:  399:      if (((*feedback_control_Y_Level) != 0) && (((*feedback_control_Y_Level) <
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+branch  2 taken 50% (fallthrough)
+branch  3 taken 50%
+        1:  400:            10) || ((*feedback_control_Y_Level) > 100))) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -:  401:        /* Transition: '<S1>:157' */
+        -:  402:        /* Transition: '<S1>:173' */
+        -:  403:        /* Exit Internal 'DISCONNECTED_SENSOR': '<S1>:104' */
+        1:  404:        feedback_control_DWork->is_DISCONNECTED_SENSOR =
+        -:  405:          feedback_con_IN_NO_ACTIVE_CHILD;
+        1:  406:        feedback_control_DWork->is_MONITORING_LOGIC =
+        -:  407:          feedback_cont_IN_BLINK_OUTRANGE;
+        -:  408:
+        -:  409:        /* Entry 'BLINK_OUTRANGE': '<S1>:103' */
+        -:  410:        /* Entry Internal 'BLINK_OUTRANGE': '<S1>:103' */
+        -:  411:        /* Transition: '<S1>:166' */
+        1:  412:        feedback_control_DWork->is_BLINK_OUTRANGE = feedback_control_IN_LED_ON;
+        1:  413:        feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  414:
+        -:  415:        /* Outport: '<Root>/Led' */
+        -:  416:        /* Entry 'LED_ON': '<S1>:115' */
+        1:  417:        *feedback_control_Y_Led = true;
+   288427:  418:      } else if (((*feedback_control_Y_Level) >= 10) &&
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        1:  419:                 ((*feedback_control_Y_Level) <= 100)) {
+        -:  420:        /* Transition: '<S1>:175' */
+        -:  421:        /* Transition: '<S1>:176' */
+        -:  422:        /* Exit Internal 'DISCONNECTED_SENSOR': '<S1>:104' */
+        1:  423:        feedback_control_DWork->is_DISCONNECTED_SENSOR =
+        -:  424:          feedback_con_IN_NO_ACTIVE_CHILD;
+        1:  425:        feedback_control_DWork->is_MONITORING_LOGIC =
+        -:  426:          feedback_contr_IN_BLINK_INRANGE;
+        -:  427:
+        -:  428:        /* Entry 'BLINK_INRANGE': '<S1>:62' */
+        -:  429:        /* Entry Internal 'BLINK_INRANGE': '<S1>:62' */
+        -:  430:        /* Transition: '<S1>:125' */
+        1:  431:        feedback_control_DWork->is_BLINK_INRANGE = feedback_control_IN_LED_ON;
+        1:  432:        feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  433:
+        -:  434:        /* Outport: '<Root>/Led' */
+        -:  435:        /* Entry 'LED_ON': '<S1>:108' */
+        1:  436:        *feedback_control_Y_Led = true;
+   288425:  437:      } else if (feedback_control_DWork->is_DISCONNECTED_SENSOR ==
+branch  0 taken 48% (fallthrough)
+branch  1 taken 52%
+        -:  438:                 feedback_control_IN_LED_OFF) {
+        -:  439:        /* Outport: '<Root>/Led' */
+   138376:  440:        *feedback_control_Y_Led = false;
+        -:  441:
+        -:  442:        /* During 'LED_OFF': '<S1>:147' */
+   138376:  443:        if (feedback_control_DWork->temporalCounter_i3 >= 50000U) {
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  444:          /* Transition: '<S1>:143' */
+        1:  445:          feedback_control_DWork->is_DISCONNECTED_SENSOR =
+        -:  446:            feedback_control_IN_LED_ON;
+        1:  447:          feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  448:
+        -:  449:          /* Outport: '<Root>/Led' */
+        -:  450:          /* Entry 'LED_ON': '<S1>:144' */
+        1:  451:          *feedback_control_Y_Led = true;
+        -:  452:        }
+        -:  453:      } else {
+        -:  454:        /* Outport: '<Root>/Led' */
+   150049:  455:        *feedback_control_Y_Led = true;
+        -:  456:
+        -:  457:        /* During 'LED_ON': '<S1>:144' */
+   150049:  458:        if (feedback_control_DWork->temporalCounter_i3 >= 50000U) {
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  459:          /* Transition: '<S1>:146' */
+        3:  460:          feedback_control_DWork->is_DISCONNECTED_SENSOR =
+        -:  461:            feedback_control_IN_LED_OFF;
+        3:  462:          feedback_control_DWork->temporalCounter_i3 = 0U;
+        -:  463:
+        -:  464:          /* Outport: '<Root>/Led' */
+        -:  465:          /* Entry 'LED_OFF': '<S1>:147' */
+        3:  466:          *feedback_control_Y_Led = false;
+        -:  467:        }
+        -:  468:      }
+   288427:  469:      break;
+        -:  470:    }
+        -:  471:  }
+        -:  472:
+        -:  473:  /* End of Chart: '<Root>/Chart' */
+   480001:  474:}
+        -:  475:
+        -:  476:/* Model initialize function */
+function _Z27feedback_control_initializeP24tag_RTM_feedback_controlPhS1_PtS1_ called 1 returned 100% blocks executed 100%
+        1:  477:void feedback_control_initialize(RT_MODEL_feedback_control *const
+        -:  478:  feedback_control_M, boolean_T *feedback_control_U_echo_signal, boolean_T
+        -:  479:  *feedback_control_Y_trig_signal, uint16_T *feedback_control_Y_Level, boolean_T
+        -:  480:  *feedback_control_Y_Led)
+        -:  481:{
+        1:  482:  D_Work_feedback_control *feedback_control_DWork = feedback_control_M->dwork;
+        -:  483:
+        -:  484:  /* Registration code */
+        -:  485:
+        -:  486:  /* states (dwork) */
+        1:  487:  (void) memset((void *)feedback_control_DWork, 0,
+        -:  488:                sizeof(D_Work_feedback_control));
+        -:  489:
+        -:  490:  /* external inputs */
+        1:  491:  *feedback_control_U_echo_signal = false;
+        -:  492:
+        -:  493:  /* external outputs */
+        1:  494:  (*feedback_control_Y_trig_signal) = false;
+        1:  495:  (*feedback_control_Y_Level) = 0U;
+        1:  496:  (*feedback_control_Y_Led) = false;
+        -:  497:
+        -:  498:  /* SystemInitialize for Chart: '<Root>/Chart' */
+        1:  499:  feedback_control_DWork->is_MONITORING_LOGIC = feedback_con_IN_NO_ACTIVE_CHILD;
+        1:  500:  feedback_control_DWork->is_BLINK_INRANGE = feedback_con_IN_NO_ACTIVE_CHILD;
+        1:  501:  feedback_control_DWork->is_BLINK_OUTRANGE = feedback_con_IN_NO_ACTIVE_CHILD;
+        1:  502:  feedback_control_DWork->is_DISCONNECTED_SENSOR =
+        -:  503:    feedback_con_IN_NO_ACTIVE_CHILD;
+        1:  504:  feedback_control_DWork->temporalCounter_i3 = 0U;
+        1:  505:  feedback_control_DWork->is_PROCESSING_LOGIC = feedback_con_IN_NO_ACTIVE_CHILD;
+        1:  506:  feedback_control_DWork->is_TRIG_SIGNAL_OFF = feedback_con_IN_NO_ACTIVE_CHILD;
+        1:  507:  feedback_control_DWork->temporalCounter_i2 = 0U;
+        1:  508:  feedback_control_DWork->temporalCounter_i1 = 0U;
+        1:  509:  feedback_control_DWork->is_active_c3_feedback_control = 0U;
+        1:  510:  feedback_control_DWork->measures[0] = 0.0;
+        1:  511:  feedback_control_DWork->measures[1] = 0.0;
+        1:  512:  feedback_control_DWork->measures[2] = 0.0;
+        1:  513:  feedback_control_DWork->measures[3] = 0.0;
+        1:  514:  feedback_control_DWork->index = 1U;
+        -:  515:
+        -:  516:  /* SystemInitialize for Outport: '<Root>/Level' incorporates:
+        -:  517:   *  Chart: '<Root>/Chart'
+        -:  518:   */
+        1:  519:  *feedback_control_Y_Level = 0U;
+        1:  520:}
+        -:  521:
+        -:  522:/* Model terminate function */
+function _Z26feedback_control_terminateP24tag_RTM_feedback_control called 1 returned 100% blocks executed 100%
+        1:  523:void feedback_control_terminate(RT_MODEL_feedback_control *const
+        -:  524:  feedback_control_M)
+        -:  525:{
+        -:  526:  /* (no terminate code required) */
+        -:  527:  UNUSED_PARAMETER(feedback_control_M);
+        1:  528:}
+        -:  529:
+        -:  530:/*
+        -:  531: * File trailer for generated code.
+        -:  532: *
+        -:  533: * [EOF]
+        -:  534: */

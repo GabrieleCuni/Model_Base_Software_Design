@@ -1,0 +1,47 @@
+MW_ArduinoHWInit.o: \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinotarget/registry/../src/MW_ArduinoHWInit.cpp \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Arduino.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/binary.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/WCharacter.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/WString.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/HardwareSerial.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Stream.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Print.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Printable.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/USBAPI.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Arduino.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/variants/standard/pins_arduino.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinobase/include/io_wrappers.h \
+ /home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/rtwtypes.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Arduino.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/binary.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/WCharacter.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/WString.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/HardwareSerial.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Stream.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Print.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Printable.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/USBAPI.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Arduino.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/variants/standard/pins_arduino.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinobase/include/io_wrappers.h:
+
+/home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/rtwtypes.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinotarget/include/MW_ArduinoHWInit.h:

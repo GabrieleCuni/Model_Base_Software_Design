@@ -1,0 +1,117 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   14 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "is_active_c3_feedback_control"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_PROCESSING_LOGIC"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "PROCESSING_LOGIC"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_TRIG_SIGNAL_OFF"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "PROCESSING_LOGIC.TRIG_SIGNAL_OFF"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_MONITORING_LOGIC"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "MONITORING_LOGIC"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_BLINK_OUTRANGE"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "MONITORING_LOGIC.BLINK_OUTRANGE"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_BLINK_INRANGE"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "MONITORING_LOGIC.BLINK_INRANGE"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_DISCONNECTED_SENSOR"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "MONITORING_LOGIC.DISCONNECTED_SENSOR"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "measures"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "measures"\
+      SrcLocation  ""\
+      Dimensions   [4]\
+    }\
+    ChartData {\
+      Name         "index"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "index"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "echo_pulse_duration_us"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "echo_pulse_duration_us"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "echo_up_check"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "echo_up_check"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i2"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i3"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

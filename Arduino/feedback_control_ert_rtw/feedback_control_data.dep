@@ -1,0 +1,47 @@
+feedback_control_data.o: \
+ /home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/feedback_control_data.c \
+ /home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/feedback_control.h \
+ /home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/rtwtypes.h \
+ /usr/local/MATLAB/R2020b/simulink/include/rtw_continuous.h \
+ /home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/rtwtypes.h \
+ /usr/local/MATLAB/R2020b/simulink/include/rtw_solver.h \
+ /usr/local/MATLAB/R2020b/simulink/include/rtw_continuous.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinobase/include/MW_arduino_digitalio.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinobase/include/MW_Ultrasonic.h \
+ /home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/feedback_control_types.h \
+ /home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/MW_target_hardware_resources.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Arduino.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/binary.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/variants/standard/pins_arduino.h \
+ /home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/feedback_control_private.h
+
+/home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/feedback_control.h:
+
+/home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/rtwtypes.h:
+
+/usr/local/MATLAB/R2020b/simulink/include/rtw_continuous.h:
+
+/home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/rtwtypes.h:
+
+/usr/local/MATLAB/R2020b/simulink/include/rtw_solver.h:
+
+/usr/local/MATLAB/R2020b/simulink/include/rtw_continuous.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinobase/include/MW_arduino_digitalio.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinobase/include/MW_Ultrasonic.h:
+
+/home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/feedback_control_types.h:
+
+/home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/MW_target_hardware_resources.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Arduino.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/binary.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/variants/standard/pins_arduino.h:
+
+/home/gabriele/Desktop/MBSD_GabrieleCuni_277957/Arduino/feedback_control_ert_rtw/feedback_control_private.h:

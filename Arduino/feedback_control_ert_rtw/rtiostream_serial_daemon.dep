@@ -1,0 +1,44 @@
+rtiostream_serial_daemon.o: \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinotarget/registry/../src/rtiostream_serial_daemon.cpp \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Arduino.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/binary.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/WCharacter.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/WString.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/HardwareSerial.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Stream.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Print.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Printable.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/USBAPI.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Arduino.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/variants/standard/pins_arduino.h \
+ /home/gabriele/Desktop/Data_Science_and_Engineering/Second_Year/Second_Semester/Model_Base_Software_Design/Simulink/Arduino_ultrasonic_sensor/feedback_control_ert_rtw/MW_target_hardware_resources.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h \
+ /usr/local/MATLAB/R2020b/toolbox/coder/rtiostream/src/rtiostream.h
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Arduino.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/binary.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/WCharacter.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/WString.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/HardwareSerial.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Stream.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Print.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Printable.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/USBAPI.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/cores/arduino/Arduino.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/3P.instrset/arduinoide.instrset/arduino-1.8.10/hardware/arduino/avr/variants/standard/pins_arduino.h:
+
+/home/gabriele/Desktop/Data_Science_and_Engineering/Second_Year/Second_Semester/Model_Base_Software_Design/Simulink/Arduino_ultrasonic_sensor/feedback_control_ert_rtw/MW_target_hardware_resources.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/supportpackages/arduinotarget/scheduler/include/arduinoAVRScheduler.h:
+
+/usr/local/MATLAB/R2020b/toolbox/coder/rtiostream/src/rtiostream.h:

@@ -1,0 +1,41 @@
+ext_svr_daemon.o: \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/shared/externalmode_daemon/src/ext_svr_daemon.c \
+ /home/gabriele/Desktop/Data_Science_and_Engineering/Second_Year/Second_Semester/Model_Base_Software_Design/Simulink/Arduino_ultrasonic_sensor/feedback_control_ert_rtw/rtwtypes.h \
+ /home/gabriele/Desktop/Data_Science_and_Engineering/Second_Year/Second_Semester/Model_Base_Software_Design/Simulink/Arduino_ultrasonic_sensor/feedback_control_ert_rtw/multiword_types.h \
+ /home/gabriele/Desktop/Data_Science_and_Engineering/Second_Year/Second_Semester/Model_Base_Software_Design/Simulink/Arduino_ultrasonic_sensor/feedback_control_ert_rtw/rtwtypes.h \
+ /usr/local/MATLAB/R2020b/simulink/include/rtw_extmode.h \
+ /usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/ext_types.h \
+ /usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/ext_share.h \
+ /usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/ext_test.h \
+ /usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/ext_svr_transport.h \
+ /usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/updown.h \
+ /usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/upsup_public.h \
+ /usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/updown_util.h \
+ /usr/local/MATLAB/R2020b/rtw/c/src/dt_info.h \
+ /home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/shared/externalmode_daemon/include/daemon_checksum.h
+
+/home/gabriele/Desktop/Data_Science_and_Engineering/Second_Year/Second_Semester/Model_Base_Software_Design/Simulink/Arduino_ultrasonic_sensor/feedback_control_ert_rtw/rtwtypes.h:
+
+/home/gabriele/Desktop/Data_Science_and_Engineering/Second_Year/Second_Semester/Model_Base_Software_Design/Simulink/Arduino_ultrasonic_sensor/feedback_control_ert_rtw/multiword_types.h:
+
+/home/gabriele/Desktop/Data_Science_and_Engineering/Second_Year/Second_Semester/Model_Base_Software_Design/Simulink/Arduino_ultrasonic_sensor/feedback_control_ert_rtw/rtwtypes.h:
+
+/usr/local/MATLAB/R2020b/simulink/include/rtw_extmode.h:
+
+/usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/ext_types.h:
+
+/usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/ext_share.h:
+
+/usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/ext_test.h:
+
+/usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/ext_svr_transport.h:
+
+/usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/updown.h:
+
+/usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/upsup_public.h:
+
+/usr/local/MATLAB/R2020b/rtw/c/src/ext_mode/common/updown_util.h:
+
+/usr/local/MATLAB/R2020b/rtw/c/src/dt_info.h:
+
+/home/gabriele/Documents/MATLAB/SupportPackages/R2020b/toolbox/target/shared/externalmode_daemon/include/daemon_checksum.h:
