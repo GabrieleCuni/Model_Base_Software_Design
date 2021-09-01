@@ -1,4 +1,7 @@
 *.html linguist-detectable=false
 *.js linguist-detectable=false
 *.css linguist-detectable=false
+*.xml linguist-detectable=false
+*.py linguist-detectable=false
+*.slx linguist-language=Matlab
 
