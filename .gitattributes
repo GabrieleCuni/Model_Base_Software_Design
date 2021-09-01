@@ -4,6 +4,7 @@
 *.xml linguist-detectable=false
 *.py linguist-detectable=false
 *.mk linguist-detectable=false
+*.m linguist-detectable=false
 *.properties linguist-detectable=false
 *.slx linguist-language=Matlab
 
